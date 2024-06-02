@@ -263,6 +263,15 @@ type FullTransaction struct {
 		Code        string    `json:"code"`
 		Description string    `json:"description"`
 	} `json:"returnedItems"`
+	Customer struct {
+		Name  string `json:"name,omitempty"`
+		Email string `json:"email,omitempty"`
+	} `json:"customer,omitempty"`
+	Profile struct {
+		CustomerProfileId string `json:"customerProfileId,omitempty"`
+		PaymentProfileId  string `json:"customerPaymentProfileId,omitempty"`
+	} `json:"profile,omitempty"`
+	marketType string `json:"marketType"`
 }
 
 type GetUnsettledBatchTransactionListRequest struct {
