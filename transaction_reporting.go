@@ -271,7 +271,9 @@ type FullTransaction struct {
 		CustomerProfileId string `json:"customerProfileId,omitempty"`
 		PaymentProfileId  string `json:"customerPaymentProfileId,omitempty"`
 	} `json:"profile,omitempty"`
-	marketType string `json:"marketType"`
+	MarketType string `json:"marketType"`
+	Billing    BillTo `json:"billTo"`
+	Shipping   BillTo `json:"shipTo"` //same shipto has identical properties as billto
 }
 
 type GetUnsettledBatchTransactionListRequest struct {
