@@ -287,21 +287,21 @@ type TransactionRequest struct {
 }
 
 type Order struct {
-	InvoiceNumber string `json:"invoiceNumber"`
+	InvoiceNumber string `json:"invoiceNumber,omitempty"`
 }
 
 type ProcessingOptions struct {
-	IsSubsequentAuth string `json:"isSubsequentAuth"`
+	IsSubsequentAuth string `json:"isSubsequentAuth,omitempty"`
 }
 
 type SubsequentAuthInformation struct {
-	OriginalNetworkTransId string `json:"originalNetworkTransId"`
-	OriginalAuthAmount     string `json:"originalAuthAmount"`
-	Reason                 string `json:"reason"`
+	OriginalNetworkTransId string `json:"originalNetworkTransId,omitempty"`
+	OriginalAuthAmount     string `json:"originalAuthAmount,omitempty"`
+	Reason                 string `json:"reason,omitempty"`
 }
 
 type AuthorizationIndicatorType struct {
-	AuthorizationIndicator string `json:"authorizationIndicator"`
+	AuthorizationIndicator string `json:"authorizationIndicator,omitempty"`
 }
 
 type Address struct {
