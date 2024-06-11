@@ -262,7 +262,7 @@ type UserField struct {
 
 type TransactionRequest struct {
 	TransactionType string     `json:"transactionType,omitempty"`
-	Amount          string     `json:"amount,omitempty"`
+	Amount          float64    `json:"amount,omitempty"`
 	CurrencyCode    string     `json:"currencyCode,omitempty"`
 	Payment         *Payment   `json:"payment,omitempty"`
 	RefTransId      string     `json:"refTransId,omitempty"`
