@@ -263,6 +263,7 @@ type UserField struct {
 type TransactionRequest struct {
 	TransactionType string     `json:"transactionType,omitempty"`
 	Amount          string     `json:"amount,omitempty"`
+	CurrencyCode    string     `json:"currencyCode,omitempty"`
 	Payment         *Payment   `json:"payment,omitempty"`
 	RefTransId      string     `json:"refTransId,omitempty"`
 	AuthCode        string     `json:"authCode,omitempty"`
@@ -273,11 +274,34 @@ type TransactionRequest struct {
 	//Shipping            Shipping            `json:"shipping,omitempty"`
 	//PoNumber            string              `json:"poNumber,omitempty"`
 	//Customer            Customer            `json:"customer,omitempty"`
-	BillTo     *BillTo  `json:"billTo,omitempty"`
-	ShipTo     *Address `json:"shipTo,omitempty"`
-	CustomerIP string   `json:"customerIP,omitempty"`
+	BillTo             *BillTo                    `json:"billTo,omitempty"`
+	ShipTo             *Address                   `json:"shipTo,omitempty"`
+	CustomerIP         string                     `json:"customerIP,omitempty"`
+	OrderInvoice       Order                      `json:"order,omitempty"`
+	ProcessingOpts     ProcessingOptions          `json:"processingOptions,omitempty"`
+	SubsequentAuthInfo SubsequentAuthInformation  `json:"subsequentAuthInformation,omitempty"`
+	AuthIndicatorType  AuthorizationIndicatorType `json:"AuthorizationIndicatorType,omitempty"`
 	//TransactionSettings TransactionSettings `json:"transactionSettings,omitempty"`
 	//UserFields          UserFields          `json:"userFields,omitempty"`
+
+}
+
+type Order struct {
+	InvoiceNumber string `json:"invoiceNumber"`
+}
+
+type ProcessingOptions struct {
+	IsSubsequentAuth string `json:"isSubsequentAuth"`
+}
+
+type SubsequentAuthInformation struct {
+	OriginalNetworkTransId string `json:"originalNetworkTransId"`
+	OriginalAuthAmount     string `json:"originalAuthAmount"`
+	Reason                 string `json:"reason"`
+}
+
+type AuthorizationIndicatorType struct {
+	AuthorizationIndicator string `json:"authorizationIndicator"`
 }
 
 type Address struct {

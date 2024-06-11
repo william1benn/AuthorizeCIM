@@ -355,6 +355,7 @@ type Profile struct {
 	Shipping           *Address         `json:"address,omitempty"`
 	CustomerAddressId  string           `json:"customerAddressId,omitempty"`
 	PaymentProfile     *PaymentProfile  `json:"paymentProfile,omitempty"`
+	ShippingProfileId  string           `json:"shippingProfileId,omitempty"`
 }
 
 type PaymentProfiles struct {
